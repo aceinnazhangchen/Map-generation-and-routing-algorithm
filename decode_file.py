@@ -14,7 +14,7 @@ def decode_file_one(input_file):
     if os.path.exists(encrypted_path):
         os.remove(encrypted_path)
     os.rename(input_file,encrypted_path)
-    decode_file(encrypted_path,input_file)
+    decode_file(encrypted_path,input_file+".json")
     os.remove(encrypted_path)
 
 def loop_decode_files():
@@ -28,7 +28,7 @@ def loop_decode_files():
                 if os.path.exists(encrypted_path):
                      os.remove(encrypted_path)
                 os.rename(file_path,encrypted_path)
-                decode_file(encrypted_path,file_path)
+                decode_file(encrypted_path,file_path+".json")
                 os.remove(encrypted_path)
 
 if __name__ == "__main__":
